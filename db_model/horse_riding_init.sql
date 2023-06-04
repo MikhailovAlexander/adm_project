@@ -132,27 +132,23 @@ CREATE TABLE public.service (
 ALTER TABLE public.service OWNER TO postgres;
 -- ddl-end --
 
-INSERT INTO public.service (service_id, service_name) VALUES (E'1', E'Owner workout with coach');
+INSERT INTO public.service (service_id, service_name) VALUES (E'1', E'Horseback riding workout');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'2', E'Horse workout');
+INSERT INTO public.service (service_id, service_name) VALUES (E'2', E'Concours  workout');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'3', E'Solarium');
+INSERT INTO public.service (service_id, service_name) VALUES (E'3', E'Dressage workout');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'4', E'Indoor arena workout');
+INSERT INTO public.service (service_id, service_name) VALUES (E'4', E'Pony riding');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'5', E'Rent a locker in the locker room');
+INSERT INTO public.service (service_id, service_name) VALUES (E'5', E'Hippotherapy');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'6', E'Preparing the horse for the workout');
+INSERT INTO public.service (service_id, service_name) VALUES (E'6', E'Horseback riding outing');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'7', E'Workout with a set of obstacles');
+INSERT INTO public.service (service_id, service_name) VALUES (E'7', E'Photo session');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'8', E'Video surveillance');
+INSERT INTO public.service (service_id, service_name) VALUES (E'8', E'Excursion');
 -- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'9', E'Veterinary treatments');
--- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'10', E'Massage');
--- ddl-end --
-INSERT INTO public.service (service_id, service_name) VALUES (E'11', E'Clearing of hooves ');
+INSERT INTO public.service (service_id, service_name) VALUES (E'9', E'Celebration event');
 -- ddl-end --
 
 -- object: public.service_price | type: TABLE --
@@ -170,63 +166,6 @@ CREATE TABLE public.service_price (
 ALTER TABLE public.service_price OWNER TO postgres;
 -- ddl-end --
 
--- object: public.contract | type: TABLE --
--- DROP TABLE IF EXISTS public.contract CASCADE;
-CREATE TABLE public.contract (
-	contract_id serial NOT NULL,
-	contract_active_from date NOT NULL,
-	contract_active_to date,
-	client_id integer NOT NULL,
-	horse_id integer NOT NULL,
-	employee_registration_id integer NOT NULL,
-	CONSTRAINT contract_pk PRIMARY KEY (contract_id)
-
-);
--- ddl-end --
-ALTER TABLE public.contract OWNER TO postgres;
--- ddl-end --
-
--- object: public.service_contract_link | type: TABLE --
--- DROP TABLE IF EXISTS public.service_contract_link CASCADE;
-CREATE TABLE public.service_contract_link (
-	service_contract_link_id serial NOT NULL,
-	contract_id integer NOT NULL,
-	service_id integer NOT NULL,
-	service_price_id integer NOT NULL,
-	CONSTRAINT service_contract_link_pk PRIMARY KEY (service_contract_link_id)
-
-);
--- ddl-end --
-ALTER TABLE public.service_contract_link OWNER TO postgres;
--- ddl-end --
-
--- object: public.invoice | type: TABLE --
--- DROP TABLE IF EXISTS public.invoice CASCADE;
-CREATE TABLE public.invoice (
-	invoice_id serial NOT NULL,
-	invoice_date date NOT NULL,
-	invoice_period date NOT NULL,
-	contract_id integer,
-	CONSTRAINT invoice_pk PRIMARY KEY (invoice_id)
-
-);
--- ddl-end --
-ALTER TABLE public.invoice OWNER TO postgres;
--- ddl-end --
-
--- object: public.invoice_detail | type: TABLE --
--- DROP TABLE IF EXISTS public.invoice_detail CASCADE;
-CREATE TABLE public.invoice_detail (
-	invoice_detail_id serial NOT NULL,
-	invoice_id integer NOT NULL,
-	service_contract_link_id integer NOT NULL,
-	CONSTRAINT invoice_detail_pk PRIMARY KEY (invoice_detail_id)
-
-);
--- ddl-end --
-ALTER TABLE public.invoice_detail OWNER TO postgres;
--- ddl-end --
-
 -- object: public.payment | type: TABLE --
 -- DROP TABLE IF EXISTS public.payment CASCADE;
 CREATE TABLE public.payment (
@@ -241,18 +180,53 @@ CREATE TABLE public.payment (
 ALTER TABLE public.payment OWNER TO postgres;
 -- ddl-end --
 
--- object: public.payment_distribution | type: TABLE --
--- DROP TABLE IF EXISTS public.payment_distribution CASCADE;
-CREATE TABLE public.payment_distribution (
-	payment_distribution_id serial NOT NULL,
-	payment_distribution_ammount decimal(10,2) NOT NULL,
-	payment_id integer NOT NULL,
-	invoice_detail_id integer NOT NULL,
-	CONSTRAINT payment_distribution_pk PRIMARY KEY (payment_distribution_id)
+-- object: public.horse_service_link | type: TABLE --
+-- DROP TABLE IF EXISTS public.horse_service_link CASCADE;
+CREATE TABLE public.horse_service_link (
+	horse_service_link_id serial NOT NULL,
+	horse_service_link_active_from date NOT NULL,
+	horse_service_link_active_to date,
+	horse_id integer NOT NULL,
+	service_id integer NOT NULL,
+	CONSTRAINT horse_service_link_pk PRIMARY KEY (horse_service_link_id)
 
 );
 -- ddl-end --
-ALTER TABLE public.payment_distribution OWNER TO postgres;
+ALTER TABLE public.horse_service_link OWNER TO postgres;
+-- ddl-end --
+
+-- object: public.employee_service_link | type: TABLE --
+-- DROP TABLE IF EXISTS public.employee_service_link CASCADE;
+CREATE TABLE public.employee_service_link (
+	employee_service_link_id serial NOT NULL,
+	employee_service_link_active_from date NOT NULL,
+	employee_service_link_active_to date,
+	employee_id integer NOT NULL,
+	service_id integer NOT NULL,
+	CONSTRAINT employee_service_link_pk PRIMARY KEY (employee_service_link_id)
+
+);
+-- ddl-end --
+ALTER TABLE public.employee_service_link OWNER TO postgres;
+-- ddl-end --
+
+-- object: public.schedule | type: TABLE --
+-- DROP TABLE IF EXISTS public.schedule CASCADE;
+CREATE TABLE public.schedule (
+	schedule_id serial NOT NULL,
+	schedule_date_time timestamp NOT NULL,
+	schedule_is_done bool,
+	schedule_is_paid bool,
+	employee_service_link_id integer,
+	horse_service_link_id integer,
+	employee_registration_id integer NOT NULL,
+	client_id integer,
+	service_price_id integer,
+	CONSTRAINT schedule_pk PRIMARY KEY (schedule_id)
+
+);
+-- ddl-end --
+ALTER TABLE public.schedule OWNER TO postgres;
 -- ddl-end --
 
 -- object: fk_person_sex | type: CONSTRAINT --
@@ -290,69 +264,6 @@ REFERENCES public.service (service_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
--- object: contract_client_fk | type: CONSTRAINT --
--- ALTER TABLE public.contract DROP CONSTRAINT IF EXISTS contract_client_fk CASCADE;
-ALTER TABLE public.contract ADD CONSTRAINT contract_client_fk FOREIGN KEY (client_id)
-REFERENCES public.client (client_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: contract_horse_id | type: CONSTRAINT --
--- ALTER TABLE public.contract DROP CONSTRAINT IF EXISTS contract_horse_id CASCADE;
-ALTER TABLE public.contract ADD CONSTRAINT contract_horse_id FOREIGN KEY (horse_id)
-REFERENCES public.horse (horse_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: contract_employee_fk | type: CONSTRAINT --
--- ALTER TABLE public.contract DROP CONSTRAINT IF EXISTS contract_employee_fk CASCADE;
-ALTER TABLE public.contract ADD CONSTRAINT contract_employee_fk FOREIGN KEY (employee_registration_id)
-REFERENCES public.employee (employee_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: service_contract_link_contract_fk | type: CONSTRAINT --
--- ALTER TABLE public.service_contract_link DROP CONSTRAINT IF EXISTS service_contract_link_contract_fk CASCADE;
-ALTER TABLE public.service_contract_link ADD CONSTRAINT service_contract_link_contract_fk FOREIGN KEY (contract_id)
-REFERENCES public.contract (contract_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: service_contract_link_service_fk | type: CONSTRAINT --
--- ALTER TABLE public.service_contract_link DROP CONSTRAINT IF EXISTS service_contract_link_service_fk CASCADE;
-ALTER TABLE public.service_contract_link ADD CONSTRAINT service_contract_link_service_fk FOREIGN KEY (service_id)
-REFERENCES public.service (service_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: service_contract_link_service_price_fk | type: CONSTRAINT --
--- ALTER TABLE public.service_contract_link DROP CONSTRAINT IF EXISTS service_contract_link_service_price_fk CASCADE;
-ALTER TABLE public.service_contract_link ADD CONSTRAINT service_contract_link_service_price_fk FOREIGN KEY (service_price_id)
-REFERENCES public.service_price (service_price_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: invoice_contract_fk | type: CONSTRAINT --
--- ALTER TABLE public.invoice DROP CONSTRAINT IF EXISTS invoice_contract_fk CASCADE;
-ALTER TABLE public.invoice ADD CONSTRAINT invoice_contract_fk FOREIGN KEY (contract_id)
-REFERENCES public.contract (contract_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: invoice_detail_invoice_fk | type: CONSTRAINT --
--- ALTER TABLE public.invoice_detail DROP CONSTRAINT IF EXISTS invoice_detail_invoice_fk CASCADE;
-ALTER TABLE public.invoice_detail ADD CONSTRAINT invoice_detail_invoice_fk FOREIGN KEY (invoice_id)
-REFERENCES public.invoice (invoice_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: invoice_detail_service_contract_link_fk | type: CONSTRAINT --
--- ALTER TABLE public.invoice_detail DROP CONSTRAINT IF EXISTS invoice_detail_service_contract_link_fk CASCADE;
-ALTER TABLE public.invoice_detail ADD CONSTRAINT invoice_detail_service_contract_link_fk FOREIGN KEY (service_contract_link_id)
-REFERENCES public.service_contract_link (service_contract_link_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
 -- object: payment_client_fk | type: CONSTRAINT --
 -- ALTER TABLE public.payment DROP CONSTRAINT IF EXISTS payment_client_fk CASCADE;
 ALTER TABLE public.payment ADD CONSTRAINT payment_client_fk FOREIGN KEY (client_id)
@@ -360,17 +271,66 @@ REFERENCES public.client (client_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
--- object: payment_distribution_payment_fk | type: CONSTRAINT --
--- ALTER TABLE public.payment_distribution DROP CONSTRAINT IF EXISTS payment_distribution_payment_fk CASCADE;
-ALTER TABLE public.payment_distribution ADD CONSTRAINT payment_distribution_payment_fk FOREIGN KEY (payment_id)
-REFERENCES public.payment (payment_id) MATCH FULL
+-- object: horse_service_link_horse_fk | type: CONSTRAINT --
+-- ALTER TABLE public.horse_service_link DROP CONSTRAINT IF EXISTS horse_service_link_horse_fk CASCADE;
+ALTER TABLE public.horse_service_link ADD CONSTRAINT horse_service_link_horse_fk FOREIGN KEY (horse_id)
+REFERENCES public.horse (horse_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
--- object: payment_distribution_invoice_detail_id | type: CONSTRAINT --
--- ALTER TABLE public.payment_distribution DROP CONSTRAINT IF EXISTS payment_distribution_invoice_detail_id CASCADE;
-ALTER TABLE public.payment_distribution ADD CONSTRAINT payment_distribution_invoice_detail_id FOREIGN KEY (invoice_detail_id)
-REFERENCES public.invoice_detail (invoice_detail_id) MATCH FULL
+-- object: horse_service_link_service_fk | type: CONSTRAINT --
+-- ALTER TABLE public.horse_service_link DROP CONSTRAINT IF EXISTS horse_service_link_service_fk CASCADE;
+ALTER TABLE public.horse_service_link ADD CONSTRAINT horse_service_link_service_fk FOREIGN KEY (service_id)
+REFERENCES public.service (service_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: employee_service_link_employee_id | type: CONSTRAINT --
+-- ALTER TABLE public.employee_service_link DROP CONSTRAINT IF EXISTS employee_service_link_employee_id CASCADE;
+ALTER TABLE public.employee_service_link ADD CONSTRAINT employee_service_link_employee_id FOREIGN KEY (employee_id)
+REFERENCES public.employee (employee_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: employee_service_link_service_id | type: CONSTRAINT --
+-- ALTER TABLE public.employee_service_link DROP CONSTRAINT IF EXISTS employee_service_link_service_id CASCADE;
+ALTER TABLE public.employee_service_link ADD CONSTRAINT employee_service_link_service_id FOREIGN KEY (service_id)
+REFERENCES public.service (service_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: schedule_employee_service_link_fk | type: CONSTRAINT --
+-- ALTER TABLE public.schedule DROP CONSTRAINT IF EXISTS schedule_employee_service_link_fk CASCADE;
+ALTER TABLE public.schedule ADD CONSTRAINT schedule_employee_service_link_fk FOREIGN KEY (employee_service_link_id)
+REFERENCES public.employee_service_link (employee_service_link_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: schedule_horce_service_link_fk | type: CONSTRAINT --
+-- ALTER TABLE public.schedule DROP CONSTRAINT IF EXISTS schedule_horce_service_link_fk CASCADE;
+ALTER TABLE public.schedule ADD CONSTRAINT schedule_horce_service_link_fk FOREIGN KEY (horse_service_link_id)
+REFERENCES public.horse_service_link (horse_service_link_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: schedule_employee_registration_fk | type: CONSTRAINT --
+-- ALTER TABLE public.schedule DROP CONSTRAINT IF EXISTS schedule_employee_registration_fk CASCADE;
+ALTER TABLE public.schedule ADD CONSTRAINT schedule_employee_registration_fk FOREIGN KEY (employee_registration_id)
+REFERENCES public.employee (employee_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: schedule_client_fk | type: CONSTRAINT --
+-- ALTER TABLE public.schedule DROP CONSTRAINT IF EXISTS schedule_client_fk CASCADE;
+ALTER TABLE public.schedule ADD CONSTRAINT schedule_client_fk FOREIGN KEY (client_id)
+REFERENCES public.client (client_id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: schedule_service_price_fk | type: CONSTRAINT --
+-- ALTER TABLE public.schedule DROP CONSTRAINT IF EXISTS schedule_service_price_fk CASCADE;
+ALTER TABLE public.schedule ADD CONSTRAINT schedule_service_price_fk FOREIGN KEY (service_price_id)
+REFERENCES public.service_price (service_price_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
