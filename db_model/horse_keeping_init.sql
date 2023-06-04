@@ -70,6 +70,25 @@ CREATE TABLE public.profession (
 ALTER TABLE public.profession OWNER TO postgres;
 -- ddl-end --
 
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'1', E'Concours coach');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'2', E'Dressage coach');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'3', E'Hippotherapist');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'4', E'Riding instructor');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'5', E'Horse breeder');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'6', E'Bereitor');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'7', E'Stableman');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'8', E'Veterinarian');
+-- ddl-end --
+INSERT INTO public.profession (profession_id, profession_name) VALUES (E'9', E'Manager');
+-- ddl-end --
+
 -- object: public.employee | type: TABLE --
 -- DROP TABLE IF EXISTS public.employee CASCADE;
 CREATE TABLE public.employee (
@@ -111,6 +130,29 @@ CREATE TABLE public.service (
 );
 -- ddl-end --
 ALTER TABLE public.service OWNER TO postgres;
+-- ddl-end --
+
+INSERT INTO public.service (service_id, service_name) VALUES (E'1', E'Owner workout with coach');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'2', E'Horse workout');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'3', E'Solarium');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'4', E'Indoor arena workout');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'5', E'Rent a locker in the locker room');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'6', E'Preparing the horse for the workout');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'7', E'Workout with a set of obstacles');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'8', E'Video surveillance');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'9', E'Veterinary treatments');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'10', E'Massage');
+-- ddl-end --
+INSERT INTO public.service (service_id, service_name) VALUES (E'11', E'Clearing of hooves ');
 -- ddl-end --
 
 -- object: public.service_price | type: TABLE --
