@@ -8,8 +8,8 @@
 -- These commands were put in this file only as a convenience.
 -- 
 -- object: horse_keeping_center | type: DATABASE --
--- DROP DATABASE IF EXISTS horse_keeping_center;
-CREATE DATABASE horse_keeping_center;
+-- DROP DATABASE IF EXISTS horse_riding_center;
+--CREATE DATABASE horse_riding_center;
 -- ddl-end --
 
 
@@ -51,7 +51,8 @@ CREATE TABLE public.client (
 	client_id serial,
 	client_phone varchar(11),
 	client_email varchar(255),
-	person_id integer NOT NULL
+	person_id integer NOT NULL,
+	CONSTRAINT client_pk PRIMARY KEY (client_id)
 );
 -- ddl-end --
 ALTER TABLE public.client OWNER TO postgres;
