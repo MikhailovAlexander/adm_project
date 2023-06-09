@@ -59,7 +59,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="20" y="20"/>
-	<column name="client_id">
+	<column name="client_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
 	<column name="client_phone">
@@ -71,6 +71,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="person_id" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
+	<constraint name="client_pk" type="pk-constr" table="public.client">
+		<columns names="client_id" ref-type="src-columns"/>
+	</constraint>
 </table>
 
 <table name="profession" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
