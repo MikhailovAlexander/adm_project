@@ -9,7 +9,6 @@ CREATE OR REPLACE PROCEDURE public.add_invoice(
     OUT p_invoice_id integer)
 LANGUAGE 'plpgsql'
 AS $BODY$
-DECLARE v_person_id INT;
 BEGIN
   INSERT INTO public.invoice(invoice_date, invoice_period, contract_id)
 	VALUES (p_invoice_date, p_invoice_period, p_contract_id)
