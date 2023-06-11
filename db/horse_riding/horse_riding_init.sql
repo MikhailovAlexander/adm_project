@@ -167,20 +167,6 @@ CREATE TABLE public.service_price (
 ALTER TABLE public.service_price OWNER TO postgres;
 -- ddl-end --
 
--- object: public.payment | type: TABLE --
--- DROP TABLE IF EXISTS public.payment CASCADE;
-CREATE TABLE public.payment (
-	payment_id serial NOT NULL,
-	payment_date date NOT NULL,
-	payment_ammount decimal(10,2) NOT NULL,
-	client_id integer NOT NULL,
-	CONSTRAINT payment_pk PRIMARY KEY (payment_id)
-
-);
--- ddl-end --
-ALTER TABLE public.payment OWNER TO postgres;
--- ddl-end --
-
 -- object: public.horse_service_link | type: TABLE --
 -- DROP TABLE IF EXISTS public.horse_service_link CASCADE;
 CREATE TABLE public.horse_service_link (
@@ -262,13 +248,6 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ALTER TABLE public.service_price DROP CONSTRAINT IF EXISTS service_price_service_fk CASCADE;
 ALTER TABLE public.service_price ADD CONSTRAINT service_price_service_fk FOREIGN KEY (service_id)
 REFERENCES public.service (service_id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: payment_client_fk | type: CONSTRAINT --
--- ALTER TABLE public.payment DROP CONSTRAINT IF EXISTS payment_client_fk CASCADE;
-ALTER TABLE public.payment ADD CONSTRAINT payment_client_fk FOREIGN KEY (client_id)
-REFERENCES public.client (client_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 

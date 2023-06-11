@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="0,0" last-zoom="0.85" max-obj-count="18"
+<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="0,0" last-zoom="0.85" max-obj-count="16"
 	 default-schema="public" default-owner="postgres">
 <database name="horse_riding_center" is-template="false" allow-conns="true">
 </database>
@@ -79,7 +79,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="profession" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="20" y="820"/>
+	<position x="20" y="600"/>
 	<column name="profession_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -109,7 +109,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="employee" layer="0" collapse-mode="2" max-obj-count="8" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="20" y="500"/>
+	<position x="20" y="260"/>
 	<column name="employee_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -157,7 +157,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="service" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1320" y="800"/>
+	<position x="1320" y="720"/>
 	<column name="service_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -187,7 +187,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="service_price" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1080" y="500"/>
+	<position x="1060" y="480"/>
 	<column name="service_price_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -205,27 +205,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<constraint name="service_price_pk" type="pk-constr" table="public.service_price">
 		<columns names="service_price_id" ref-type="src-columns"/>
-	</constraint>
-</table>
-
-<table name="payment" layer="0" collapse-mode="2" max-obj-count="4" z-value="0">
-	<schema name="public"/>
-	<role name="postgres"/>
-	<position x="20" y="260"/>
-	<column name="payment_id" not-null="true">
-		<type name="serial" length="0"/>
-	</column>
-	<column name="payment_date" not-null="true">
-		<type name="date" length="0"/>
-	</column>
-	<column name="payment_ammount" not-null="true">
-		<type name="decimal" length="10" precision="2"/>
-	</column>
-	<column name="client_id" not-null="true">
-		<type name="integer" length="0"/>
-	</column>
-	<constraint name="payment_pk" type="pk-constr" table="public.payment">
-		<columns names="payment_id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
@@ -256,7 +235,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="employee_service_link" layer="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="620" y="740"/>
+	<position x="400" y="660"/>
 	<column name="employee_service_link_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -280,7 +259,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="schedule" layer="0" collapse-mode="2" max-obj-count="10" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="620" y="240"/>
+	<position x="580" y="220"/>
 	<column name="schedule_id" not-null="true">
 		<type name="serial" length="0"/>
 	</column>
@@ -341,12 +320,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.service" table="public.service_price">
 	<columns names="service_id" ref-type="src-columns"/>
 	<columns names="service_id" ref-type="dst-columns"/>
-</constraint>
-
-<constraint name="payment_client_fk" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.client" table="public.payment">
-	<columns names="client_id" ref-type="src-columns"/>
-	<columns names="client_id" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="horse_service_link_horse_fk" type="fk-constr" comparison-type="MATCH FULL"
@@ -422,7 +395,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.profession" reference-fk="employee_profession_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="109.17" y="-21.6936"/>
+		<position x="9.14124" y="-31.6936"/>
 	</label>
 </relationship>
 
@@ -431,16 +404,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.person" reference-fk="employee_person_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="21.2518" y="-32.4804"/>
-	</label>
-</relationship>
-
-<relationship name="rel_payment_client" type="relfk" layer="0"
-	 src-table="public.payment"
-	 dst-table="public.client" reference-fk="payment_client_fk"
-	 src-required="false" dst-required="true">
-	<label ref-type="name-label">
-		<position x="86.5498" y="-12.6804"/>
+		<position x="-8.0454" y="67.8675"/>
 	</label>
 </relationship>
 
@@ -449,7 +413,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.service" reference-fk="service_price_service_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="-49.7427" y="-22.2936"/>
+		<position x="-124.51" y="-32.2936"/>
 	</label>
 </relationship>
 
@@ -467,7 +431,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.service" reference-fk="horse_service_link_service_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="62.8224" y="57.9064"/>
+		<position x="62.5988" y="-42.0936"/>
 	</label>
 </relationship>
 
@@ -476,7 +440,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.employee" reference-fk="employee_service_link_employee_id"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="44.4678" y="-20.8309"/>
+		<position x="101.327" y="-11.6804"/>
 	</label>
 </relationship>
 
@@ -488,7 +452,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <relationship name="rel_schedule_employee_service_link" type="relfk" layer="0"
 	 src-table="public.schedule"
 	 dst-table="public.employee_service_link" reference-fk="schedule_employee_service_link_fk"
-	 src-required="false" dst-required="false"/>
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="150.299" y="-50.6936"/>
+	</label>
+</relationship>
 
 <relationship name="rel_schedule_horse_service_link" type="relfk" layer="0"
 	 src-table="public.schedule"
@@ -507,14 +475,18 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <relationship name="rel_schedule_client" type="relfk" layer="0"
 	 src-table="public.schedule"
 	 dst-table="public.client" reference-fk="schedule_client_fk"
-	 src-required="false" dst-required="false"/>
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="80.1318" y="-18.0955"/>
+	</label>
+</relationship>
 
 <relationship name="rel_schedule_service_price" type="relfk" layer="0"
 	 src-table="public.schedule"
 	 dst-table="public.service_price" reference-fk="schedule_service_price_fk"
 	 src-required="false" dst-required="false">
 	<label ref-type="name-label">
-		<position x="52.5484" y="-59.9184"/>
+		<position x="62.5484" y="-69.9559"/>
 	</label>
 </relationship>
 
