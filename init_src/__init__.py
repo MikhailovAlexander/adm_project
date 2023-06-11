@@ -2,14 +2,23 @@ import os
 import datetime
 from mimesis.enums import Gender
 
-__host = 'pg'#os.environ['PGHOST']
-__db = 'postgres'#os.environ['POSTGRES_DB']
-__user = 'postgres'#os.environ['POSTGRES_USER']
-__pwd = 'postgres'#os.environ['POSTGRES_PASSWORD']
+__host = os.environ['PGHOST']
+__db = os.environ['POSTGRES_DB']
+__user = os.environ['POSTGRES_USER']
+__pwd = os.environ['POSTGRES_PASSWORD']
 __keeping_db = 'horse_keeping_center'
 __riding_db = 'horse_riding_center'
 CONN_STRING = f'Driver={{PostgreSQL Unicode}};Server={__host};' \
               f'Port=5432;Database={__db};Uid={__user};Pwd={__pwd};'
+
+YEAR = datetime.datetime.now().year
+START_DATE = datetime.date(YEAR, 1, 1)
+GENDER_DICT = {1: Gender.MALE, 2: Gender.FEMALE}
+SELECT_PROFS_QUERY = 'SELECT profession_id FROM public.profession'
+INSERT_EMPLOYEE_QUERY = 'CALL public.add_employee(?, ?, ?, ?, ?, ?, ?, NULL);'
+INSERT_CLIENT_QUERY = 'CALL public.add_client(?, ?, ?, ?, ?, NULL);'
+SELECT_CLIENT_DATA_QUERY = 'SELECT person_name, person_birth_date, sex_id, client_phone, client_email FROM public.v_client'
+
 CREATE_DB_SCRIPTS = ['db/horse_keeping/horse_keeping_create.sql',
                      'db/horse_riding/horse_riding_create.sql']
 
@@ -29,12 +38,7 @@ KEEPING_PROCEDURES = ['db/horse_keeping/procedures/add_client.sql',
                       'db/horse_keeping/procedures/add_service_to_contract.sql',
                       'db/horse_keeping/procedures/distribute_payment.sql',
                       'db/horse_keeping/procedures/create_invoice.sql']
-YEAR = datetime.datetime.now().year
-START_DATE = datetime.date(YEAR, 1, 1)
-GENDER_DICT = {1: Gender.MALE, 2: Gender.FEMALE}
-SELECT_PROFS_QUERY = 'SELECT profession_id FROM public.profession'
-INSERT_EMPLOYEE_QUERY = 'CALL public.add_employee(?, ?, ?, ?, ?, ?, ?, NULL);'
-INSERT_CLIENT_QUERY = 'CALL public.add_client(?, ?, ?, ?, ?, NULL);'
+KEEPING_VIEWS = ['db/horse_keeping/views/v_client.sql']
 INSERT_CONTRACT_QUERY = 'CALL public.add_contract(?, ?, ?, ?, ?, NULL);'
 SELECT_SERVICES_QUERY = 'SELECT service_id FROM public.service'
 INSERT_PRICE_QUERY = 'INSERT INTO public.service_price (service_price, service_price_active_from, service_id) VALUES (?, ?, ?);'
@@ -53,3 +57,4 @@ RIDING_INIT_SCRIPT_PATH = 'db/horse_riding/horse_riding_init.sql'
 RIDING_FUNCTIONS = []
 RIDING_PROCEDURES = ['db/horse_riding/procedures/add_client.sql',
                      'db/horse_riding/procedures/add_employee.sql']
+RIDING_VIEWS = ['db/horse_riding/views/v_client.sql']

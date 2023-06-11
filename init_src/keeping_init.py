@@ -1,56 +1,27 @@
 import pyodbc
 import random
 
-from constants import *
-from date_methods import get_random_date, get_month_end, add_months
-from generate_methods import gen_person_data, gen_horse_data
+from init_src import *
+from init_src.date_methods import get_random_date, get_month_end, add_months
+from init_src.generate_methods import gen_horse_data
+from init_src.common_db_methods import init_db, insert_employees, \
+    insert_prices, get_services, insert_new_client
 
 
 def init_keeping_db():
     connection = pyodbc.connect(KEEPING_CONN_STRING, autocommit=True)
     cursor = connection.cursor()
     try:
-        __init_db(cursor)
-        __insert_employees(cursor)
-        __insert_prices(cursor)
+        init_db(cursor, KEEPING_INIT_SCRIPT_PATH, KEEPING_FUNCTIONS,
+                KEEPING_PROCEDURES, KEEPING_VIEWS)
+        insert_employees(cursor)
+        insert_prices(cursor, 1000, 200)
         __insert_business_data(cursor)
     except Exception as ex:
         print(ex)
     finally:
         cursor.close()
         connection.close()
-
-
-def __init_db(cursor):
-    with open(KEEPING_INIT_SCRIPT_PATH, 'r') as init_file:
-        init_script = init_file.read()
-    cursor.execute(init_script)
-    for func_path in KEEPING_FUNCTIONS:
-        with open(func_path, 'r') as func_file:
-            func_script = func_file.read()
-        cursor.execute(func_script)
-    for proc_path in KEEPING_PROCEDURES:
-        with open(proc_path, 'r') as proc_file:
-            proc_script = proc_file.read()
-        cursor.execute(proc_script)
-
-
-def __insert_employees(cursor):
-    employee_cnt = 10
-    cursor.execute(SELECT_PROFS_QUERY)
-    for prof_row in cursor.fetchall():
-        for _ in range(employee_cnt):
-            data = gen_person_data()
-            data.append(START_DATE)
-            data.append(prof_row[0])
-            cursor.execute(INSERT_EMPLOYEE_QUERY, data)
-
-
-def __insert_prices(cursor):
-    for service_id in __get_services(cursor):
-        price = 1000 + 100*random.randint(1, 200)
-        data = [price, datetime.date.today(), service_id]
-        cursor.execute(INSERT_PRICE_QUERY, data)
 
 
 def __insert_business_data(cursor):
@@ -89,7 +60,7 @@ def __insert_payments(cursor, start_date, end_date):
 
 def __insert_client_and_contracts(cursor, start_date, end_date):
     contract_date = get_random_date(start_date, end_date)
-    client_id = __insert_new_client(cursor)
+    client_id = insert_new_client(cursor)
     cursor.execute(SELECT_MANAGERS_QUERY)
     manager_ids = [row[0] for row in cursor.fetchall()]
     manager_id = random.choice(manager_ids)
@@ -103,12 +74,6 @@ def __insert_client_and_contracts(cursor, start_date, end_date):
         __insert_contract(cursor, client_id, contract_date, manager_id)
 
 
-def __insert_new_client(cursor):
-    data = gen_person_data()
-    cursor.execute(INSERT_CLIENT_QUERY, data)
-    return cursor.fetchone()[0]
-
-
 def __insert_contract(cursor, client_id, contract_date, employee_id):
     data = gen_horse_data()
     data.append(contract_date)
@@ -117,7 +82,7 @@ def __insert_contract(cursor, client_id, contract_date, employee_id):
     cursor.execute(INSERT_CONTRACT_QUERY, data)
 
     contract_id = cursor.fetchone()[0]
-    service_ids = __get_services(cursor)
+    service_ids = get_services(cursor)
     for _ in range(random.randint(1, len(service_ids) - 1)):
         service_id = random.choice(service_ids)
         service_ids.remove(service_id)
@@ -125,11 +90,6 @@ def __insert_contract(cursor, client_id, contract_date, employee_id):
         cursor.execute(ADD_SERVICE_TO_CONTRACT_QUERY, data)
 
     return contract_id
-
-
-def __get_services(cursor):
-    cursor.execute(SELECT_SERVICES_QUERY)
-    return [row[0] for row in cursor.fetchall()]
 
 
 def __get_clients(cursor):

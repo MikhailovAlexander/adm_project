@@ -2,7 +2,7 @@ import random
 from mimesis.providers import Person, Datetime
 
 
-from constants import YEAR, GENDER_DICT
+from init_src import YEAR, GENDER_DICT
 
 
 def gen_person_data():
@@ -17,6 +17,14 @@ def gen_person_data():
                        person.telephone(mask='89#########'),
                        person.email()]
     return new_person_data
+
+
+def gen_phone():
+    return Person('en').telephone(mask='89#########')
+
+
+def gen_email():
+    return Person('en').email()
 
 
 def gen_horse_data():

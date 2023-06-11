@@ -1,8 +1,8 @@
 import pyodbc
 
-from constants import CONN_STRING, CREATE_DB_SCRIPTS
-from keeping_init import init_keeping_db
-from riding_init import init_riding_db
+from init_src import CONN_STRING, CREATE_DB_SCRIPTS
+from init_src.keeping_init import init_keeping_db
+from init_src.riding_init import init_riding_db
 
 
 def main():
