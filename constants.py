@@ -2,12 +2,20 @@ import os
 import datetime
 from mimesis.enums import Gender
 
-__host = os.environ['PGHOST']
-__db = os.environ['POSTGRES_DB']
-__user = os.environ['POSTGRES_USER']
-__pwd = os.environ['POSTGRES_PASSWORD']
+__host = 'pg'#os.environ['PGHOST']
+__db = 'postgres'#os.environ['POSTGRES_DB']
+__user = 'postgres'#os.environ['POSTGRES_USER']
+__pwd = 'postgres'#os.environ['POSTGRES_PASSWORD']
+__keeping_db = 'horse_keeping_center'
+__riding_db = 'horse_riding_center'
+CONN_STRING = f'Driver={{PostgreSQL Unicode}};Server={__host};' \
+              f'Port=5432;Database={__db};Uid={__user};Pwd={__pwd};'
+CREATE_DB_SCRIPTS = ['db/horse_keeping/horse_keeping_create.sql',
+                     'db/horse_riding/horse_riding_create.sql']
+
 KEEPING_CONN_STRING = f'Driver={{PostgreSQL Unicode}};Server={__host};' \
-                      f'Port=5432;Database={__db};Uid={__user};Pwd={__pwd};'
+                      f'Port=5432;Database={__keeping_db};Uid={__user};' \
+                      f'Pwd={__pwd};'
 KEEPING_INIT_SCRIPT_PATH = 'db/horse_keeping/horse_keeping_init.sql'
 KEEPING_FUNCTIONS = ['db/horse_keeping/functions/'
                      'get_unpaid_invoice_details_by_client.sql',
@@ -37,3 +45,11 @@ SELECT_CLIENTS_QUERY = 'SELECT client_id FROM public.client'
 SELECT_CLIENT_DEBT_QUERY = 'SELECT public.get_client_debt(?)'
 INSERT_PAYMENT_QUERY = 'CALL public.add_payment(?, ?, ?, NULL);'
 DISTRIBUTE_PAYMENT_QUERY = 'CALL public.distribute_payment(?);'
+
+RIDING_CONN_STRING = f'Driver={{PostgreSQL Unicode}};Server={__host};' \
+                     f'Port=5432;Database={__riding_db};Uid={__user};' \
+                     f'Pwd={__pwd};'
+RIDING_INIT_SCRIPT_PATH = 'db/horse_riding/horse_riding_init.sql'
+RIDING_FUNCTIONS = []
+RIDING_PROCEDURES = ['db/horse_riding/procedures/add_client.sql',
+                     'db/horse_riding/procedures/add_employee.sql']
