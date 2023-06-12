@@ -54,7 +54,17 @@ RIDING_CONN_STRING = f'Driver={{PostgreSQL Unicode}};Server={__host};' \
                      f'Port=5432;Database={__riding_db};Uid={__user};' \
                      f'Pwd={__pwd};'
 RIDING_INIT_SCRIPT_PATH = 'db/horse_riding/horse_riding_init.sql'
-RIDING_FUNCTIONS = []
+RIDING_FUNCTIONS = ['db/horse_riding/functions/get_employees_id_by_profession.sql']
 RIDING_PROCEDURES = ['db/horse_riding/procedures/add_client.sql',
-                     'db/horse_riding/procedures/add_employee.sql']
+                     'db/horse_riding/procedures/add_employee.sql',
+                     'db/horse_riding/procedures/add_horse.sql',
+                     'db/horse_riding/procedures/add_schedule_row.sql']
 RIDING_VIEWS = ['db/horse_riding/views/v_client.sql']
+SELECT_EMPLOYEE_QUERY = 'SELECT employee_id FROM public.get_employees_id_by_profession(?)'
+SELECT_SERVICE_ID_QUERY = 'SELECT service_id FROM public.service WHERE service_name  = ?'
+INSERT_EMPL_SERVICE_LINK_QUERY = 'INSERT INTO public.employee_service_link(employee_service_link_active_from, employee_id, service_id) VALUES(?, ?, ?)'
+INSERT_HORSE_QUERY = 'CALL public.add_horse(?, ?, NULL);'
+INSERT_HORSE_SERVICE_LINK_QUERY = 'INSERT INTO public.horse_service_link(horse_service_link_active_from, horse_id, service_id) VALUES(?, ?, ?)'
+SELECT_EMPL_LINKS_QUERY = 'SELECT employee_service_link_id FROM public.employee_service_link WHERE service_id = ?'
+SELECT_HORSE_LINKS_QUERY = 'SELECT horse_service_link_id FROM public.horse_service_link WHERE service_id = ?'
+INSERT_SCHEDULE_ROW_QUERY = 'CALL public.add_schedule_row(?, ?, ?, ?)'
