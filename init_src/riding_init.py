@@ -4,7 +4,7 @@ import pyodbc
 
 from init_src import *
 from init_src.common_db_methods import init_db, insert_employees, \
-    insert_prices, insert_new_client, get_services
+    insert_prices, insert_new_client, get_services, get_clients
 from init_src.generate_methods import gen_phone, gen_email, gen_horse_data
 
 
@@ -21,6 +21,7 @@ def init_riding_db():
         __insert_clients(cursor, keeping_cursor)
         __insert_empl_serv_link(cursor)
         __insert_schedule(cursor)
+        __fill_schedule(cursor)
     except Exception as ex:
         print(ex)
     finally:
@@ -99,6 +100,42 @@ def __insert_schedule(cursor):
                 data = [row_dt, empl_link_id, horse_link_id, manager_id]
                 cursor.execute(INSERT_SCHEDULE_ROW_QUERY, data)
             start_dt += datetime.timedelta(days=1)
+
+
+def __fill_schedule(cursor):
+    client_ids = get_clients(cursor)
+    start_dt = datetime.datetime(year=START_DATE.year,
+                                 month=START_DATE.month,
+                                 day=START_DATE.day)
+    while start_dt < datetime.datetime.now():
+        clients_to_chose = [client_id for client_id in client_ids]
+        day_client_limit = 30
+        day_clients = []
+        for _ in range(random.randint(0, day_client_limit)):
+            idx = random.randint(0, len(clients_to_chose) - 1)
+            day_clients.append(clients_to_chose.pop(idx))
+        for client_id in day_clients:
+            cursor.execute(SELECT_SERVICES_BY_DAY_QUERY, start_dt)
+            service_ids = [row[0] for row in cursor.fetchall()]
+            if len(service_ids) == 0:
+                continue
+            service_id = random.choice(service_ids)
+            data = [start_dt, service_id]
+            cursor.execute(SELECT_SCHEDULE_BY_DAY_SERVICE_QUERY, data)
+            schedule_ids = [row[0] for row in cursor.fetchall()]
+            if len(schedule_ids) == 0:
+                continue
+            if len(schedule_ids) == 1:
+                schedule_cnt = 1
+            else:
+                schedule_cnt = random.randint(1, len(schedule_ids) - 1)
+            for idx in range(schedule_cnt):
+                schedule_id = schedule_ids[idx]
+                is_done = random.random() < 0.95
+                is_paid = random.random() < 0.95
+                data = [client_id, is_done, is_paid, schedule_id]
+                cursor.execute(INSERT_CLIENT_TO_SCHEDULE_QUERY, data)
+        start_dt += datetime.timedelta(days=1)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,8 @@ import datetime
 import random
 
 from init_src import SELECT_PROFS_QUERY, START_DATE, INSERT_EMPLOYEE_QUERY, \
-    INSERT_PRICE_QUERY, SELECT_SERVICES_QUERY, INSERT_CLIENT_QUERY
+    INSERT_PRICE_QUERY, SELECT_SERVICES_QUERY, INSERT_CLIENT_QUERY, \
+    SELECT_CLIENTS_QUERY
 from init_src.generate_methods import gen_person_data
 
 
@@ -43,4 +44,9 @@ def insert_new_client(cursor):
 
 def get_services(cursor):
     cursor.execute(SELECT_SERVICES_QUERY)
+    return [row[0] for row in cursor.fetchall()]
+
+
+def get_clients(cursor):
+    cursor.execute(SELECT_CLIENTS_QUERY)
     return [row[0] for row in cursor.fetchall()]

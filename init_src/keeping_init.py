@@ -5,7 +5,7 @@ from init_src import *
 from init_src.date_methods import get_random_date, get_month_end, add_months
 from init_src.generate_methods import gen_horse_data
 from init_src.common_db_methods import init_db, insert_employees, \
-    insert_prices, get_services, insert_new_client
+    insert_prices, get_services, insert_new_client, get_clients
 
 
 def init_keeping_db():
@@ -41,7 +41,7 @@ def __insert_business_data(cursor):
 
 
 def __insert_payments(cursor, start_date, end_date):
-    for client_id in __get_clients(cursor):
+    for client_id in get_clients(cursor):
         debt = __get_client_debt(cursor, client_id)
         if debt == 0:
             continue
@@ -90,11 +90,6 @@ def __insert_contract(cursor, client_id, contract_date, employee_id):
         cursor.execute(ADD_SERVICE_TO_CONTRACT_QUERY, data)
 
     return contract_id
-
-
-def __get_clients(cursor):
-    cursor.execute(SELECT_CLIENTS_QUERY)
-    return [row[0] for row in cursor.fetchall()]
 
 
 def __get_client_debt(cursor, client_id):
