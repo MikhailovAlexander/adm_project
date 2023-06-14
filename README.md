@@ -1,4 +1,4 @@
-# The equestrian center
+# The equestrian center 🐎
 ## A group project for the Advanced Data Management discipline
 ## The project stages:
 1. Business modeling
@@ -13,9 +13,9 @@
 
 ## Team Composition
 Members and roles:
-1. Petrova Julia - Business analyst
-2. Marmysh Ekaterina - Data analyst
-3. Mikhaylov Alexander - Developer/ DevOps engineer
+1. Petrova Julia - Business analyst 💡💰
+2. Marmysh Ekaterina - Data analyst 💡📊
+3. Mikhaylov Alexander - Developer/ DevOps engineer ⚙️🛠️
 ## Business modeling
 The equestrian center is ...
 
@@ -33,7 +33,7 @@ Action diagrams have been developed for the main cases from the use case diagram
 
 ### Diagrams for the horse keeping actions:
 
-![Image 2. The activity diagram for the for horse keeping contract](diagrams/Contract for horse keeping.jpg)
+![Image 2. The activity diagram for the for horse keeping contract](diagrams/Contract_for_horse_keeping.jpg)
 
 Image 2. The activity diagram for the for horse keeping contract
 
