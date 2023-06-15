@@ -77,6 +77,11 @@ Roles of the equestrian center:
 - ... 
 - ...
 ### 3.4. Data CRUD Matrix for the equestrian center
+
+![Image 3.1. CRUD Matrix Data to roles](images/CRUD_Data_to_roles.JPG)
+
+Image 3.1. CRUD Matrix Data to roles
+
 ### 3.5. Resources CRUD Matrix for the equestrian center
 ### 3.6. Process CRUD Matrix for the equestrian center
 ## 4. Logical modeling
