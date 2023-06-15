@@ -119,4 +119,6 @@ Image 5.2. The physical ER-diagram for the horse riding system
 
 ![Image 8.1. Building the Master data](images/master_data_building.png)
 
+Image 8.1. Building the Master data
+
 ## Business intelligence integrating
