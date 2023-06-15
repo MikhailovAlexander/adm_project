@@ -23,7 +23,7 @@ The company has two areas of activity:
 1. Horse keeping service
 2. Horse riding service
 ### 1.1. Use case diagram
-The use-case diagram for the equestrian center was developed to identify the main processes and actors. Diagram was created using the Visual Paradigm modeling tool.
+The use-case diagram for the equestrian center was developed to identify the main processes and actors. Diagram was created using the [Visual Paradigm](https://www.visual-paradigm.com/) modeling tool.
 
 ![Image 1.1. The use-case diagram for the equestrian center](diagrams/use_case_diagram.jpg)
 
@@ -57,7 +57,7 @@ Image 1.6. The activity diagram for the riding
 
 ## 2. Conceptual modeling
 A conceptual data model is a graphical representation of entities and their relationships used to model the organization of data in databases or information systems. 
-This model represents the basic entities for the equestrian center. The model created with VisualParadigm as a data modeling tool.
+This model represents the basic entities for the equestrian center. The model created with [Visual Paradigm](https://www.visual-paradigm.com/) as a data modeling tool.
 
 ![Image 2.1. The conceptual ER-diagram for the equestrian center](diagrams/Concept_diagram.jpg)
 
