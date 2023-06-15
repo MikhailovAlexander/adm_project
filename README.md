@@ -84,7 +84,7 @@ Image 3.1. CRUD Matrix Data to roles
 
 ### 3.5. Resources CRUD Matrix for the equestrian center
 
-![Image 3.2. CRUD Matrix Resources to roles](images/CRUD_Resources_to_roles.JPG)
+![Image 3.2. CRUD Matrix Resources to roles](images/CRUD_Resourсes_to_roles.JPG)
 
 Image 3.2. CRUD Matrix Resources to roles
 
@@ -94,7 +94,7 @@ Image 3.2. CRUD Matrix Resources to roles
 
 Image 3.3. CRUD Matrix Processes to roles
 
-Image 3.3. CRUD Matrix Data to roles
+
 ## 4. Logical modeling
 The logical ER-diagram is a detailed version of the conceptual ER-diagram. The logical ER model is designed to enrich the conceptual model by explicitly defining columns in each entity and introducing operational and transactional entities. The logical data model is independent of the actual database system.
 ### 4.1. The logical ER-diagram for the horse keeping system
