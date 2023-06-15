@@ -84,12 +84,15 @@ Image 3.1. CRUD Matrix Data to roles
 
 ### 3.5. Resources CRUD Matrix for the equestrian center
 
-![Image 3.2. CRUD Matrix Data to roles](images/CRUD_Resources_to_roles.JPG)
+![Image 3.2. CRUD Matrix Resources to roles](images/CRUD_Resources_to_roles.JPG)
 
-Image 3.2. CRUD Matrix Data to roles
+Image 3.2. CRUD Matrix Resources to roles
 
 ### 3.6. Process CRUD Matrix for the equestrian center
 
+![Image 3.3. CRUD Matrix Processes to roles](images/CRUD_Processes_to_roles.JPG)
+
+Image 3.3. CRUD Matrix Processes to roles
 
 Image 3.3. CRUD Matrix Data to roles
 ## 4. Logical modeling
