@@ -20,6 +20,8 @@ Members and roles:
 The equestrian center is ...
 The organization provides services to individuals. Services are provided by specific workers, at specific times, with the right horse, specially prepared for a specific client. Also, horse owners can choose horse keeping services on a contractual basis.
 
+![Image 1.1. Equestrian center](images/Equestrian_center.JPG)
+
 The company has two areas of activity:
 1. Horse keeping service
 2. Horse riding service
