@@ -56,6 +56,8 @@ Image 1.3. The activity diagram for the for horse keeping organization
 
 ### 1.3. Diagrams for the horse riding actions:
 
+In addition, the process of scheduling was considered. The Manager and the Coach are involved in this process. The process starts when the Manager needs to create a new schedule. First, the Manager generates a basic schedule. If there are inconsistent positions in the schedule, the Manager contacts the coach for approval. If an employee approves changes
+
 ![Image 1.4. The activity diagram for the scheduling](diagrams/Scheduling.jpg)
 
 Image 1.4. The activity diagram for the scheduling
