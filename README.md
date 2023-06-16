@@ -101,7 +101,7 @@ The logical ER-diagram is a detailed version of the conceptual ER-diagram. The l
 
 ![Image 4.1. The logical ER-diagram for the horse keeping system](diagrams/Logical_Model_Horse_Keeping.jpg)
 
-Image 2.1. The logical ER-diagram for the horse keeping system
+Image 4.1. The logical ER-diagram for the horse keeping system
 ### 4.2. The logical ER-diagram for the horse riding system
 
 ![Image 4.2. The logical ER-diagram for the horse riding system](diagrams/Logical_Model_Service.jpg)
@@ -138,4 +138,4 @@ The Russian software [Loginom](https://loginom.ru/) is used to create the Master
 
 Image 8.1. Building the Master data
 
-## Business intelligence integrating
+## 9. Business intelligence integrating
