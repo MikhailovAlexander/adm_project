@@ -48,6 +48,8 @@ First, the process of registering clients for horse keeping services was conside
 
 Image 1.2. The activity diagram for the for horse keeping contract
 
+The process of organizing services for keeping horses was also considered. The Horse Owner and the Stableman are involved in this process. The process starts when a client brings a horse to be placed in the centre. The Stableman then checks the horse's health, demonstrates where to keep, and clarifies the conditions of keeping, such as feeding rations and training regimen. Next, the client signs the act of transfer of the horse. After that, the Stableman places the horse in a free place. This completes the process.
+
 ![Image 1.3. The activity diagram for the for horse keeping organization](diagrams/Organization_of_the_horse_keeping.jpg)
 
 Image 1.3. The activity diagram for the for horse keeping organization
