@@ -142,6 +142,7 @@ Image 4.1. The logical ER-diagram for the horse keeping system
 ![Image 4.2. The logical ER-diagram for the horse riding system](diagrams/Logical_Model_Service.jpg)
 
 Image 4.2. The logical ER-diagram for the horse riding system
+
 ## 5. Physical modeling
 ### 5.1. Choosing a database management system
 Postgresql, the world's most advanced open source relational database, was chosen as the database management system for the project.
@@ -174,3 +175,63 @@ The Russian software [Loginom](https://loginom.ru/) is used to create the Master
 Image 8.1. Building the Master data
 
 ## 9. Business intelligence integrating
+
+![Image 9.1. Data Marts](images/data_marts.png)
+
+Image 9.1. Data Marts
+
+
+
+
+![Image 9.2. Client's Master Data Mart](images/age_sex_all_clients.png)
+
+Image 9.2. Client's Master Data Mart
+
+
+
+
+![Image 9.3. Schedule Data Mart (Data Base riding)](images/the_number_of_classes_of_each_coach_in_the_context_of_services_by_month.png)
+
+Image 9.3. Schedule Data Mart (Data Base riding)
+
+
+
+
+![Image 9.4. Invoice Data Mart_db_keeping (Data Base keeping)](images/number_of_horses_of_the_clients_who_received_the_service_by_months.png)
+
+Image 9.4. Invoice Data Mart (Data Base keeping)
+
+
+
+
+![Image 9.5. Invoice-Manager View (Data Base keeping)](images/managers_accruals_by_period.png)
+
+Image 9.5. Invoice-Manager View (Data Base keeping)
+
+
+
+
+![Image 9.6. Invoice-Service View (Data Base keeping)](images/accruals_in_the_context_of_services_by_period.png)
+
+Image 9.6. Invoice-Service View (Data Base keeping)
+
+
+
+
+![Image 9.7. Payment-Service View (Data Base keeping)](images/revenue_in_the_context_of_services_by_month.png)
+
+Image 9.7. Payment-Service View (Data Base keeping)
+
+
+
+
+![Image 9.8. Service View (Data Base riding)](images/total_riding_services_count.png)
+
+Image 9.8. Service View (Data Base riding)
+
+
+
+
+![Image 9.9. Payment-Activity areas View (Data Base keeping & Data Base riding)](images/revenue_in_the_context_of_activity_by_month.png)
+
+Image 9.9. Payment-Activity areas View (Data Base keeping & Data Base riding)
