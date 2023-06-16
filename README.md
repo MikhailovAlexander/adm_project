@@ -168,6 +168,9 @@ Image 5.2. The physical ER-diagram for the horse riding system
 ## 6. Database developing
 ## 7. Database deploying
 ## 8. Master data building
+
+![Loginom_Logo](images/Loginom_Logo.png)
+
 The Russian software [Loginom](https://loginom.ru/) is used to create the Master data about the clients of the equestrian center. The chosen program allows to configure the connection to the databases and then check the selected tables for duplicates and contradictions. Upon completion of merging and cleaning the input data imported from the two databases, the Master data is automatically exported to the database.
 
 ![Image 8.1. Building the Master data](images/master_data_building.png)
@@ -175,6 +178,8 @@ The Russian software [Loginom](https://loginom.ru/) is used to create the Master
 Image 8.1. Building the Master data
 
 ## 9. Business intelligence integrating
+
+![Loginom_Logo](images/Loginom_Logo.png)
 
 ![Image 9.1. Data Marts](images/data_marts.png)
 
