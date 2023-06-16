@@ -17,7 +17,7 @@ Members and roles:
 2. Marmysh Ekaterina - Data analyst 💡📊
 3. Mikhaylov Alexander - Developer/ DevOps engineer ⚙️🛠️
 ## 1. Business modeling
-The equestrian center is ...
+The equestrian center is a social and cultural service enterprise, a commercial organization with a private form of ownership. The services of the complex satisfy the needs of clients in leisure, communication, self-realization, physical development and treatment.
 The organization provides services to individuals. Services are provided by specific workers, at specific times, with the right horse, specially prepared for a specific client. Also, horse owners can choose horse keeping services on a contractual basis.
 
 ![Image 1.1. Equestrian center](images/Equestrian_center.JPG)
@@ -69,16 +69,23 @@ Image 2.1. The conceptual ER-diagram for the equestrian center
 ## 3. CRUD Matrix designing
 ### 3.1. Processes defining
 Processes of the equestrian center:
-- ... 
-- ...
+- Client registration for horseback-riding 
+- Get payment for the service
+- Registration of the contract for horse keeping
+- Scheduling
+- Organization of the horse keeping
+- Provision horseback riding 
 ### 3.2. Resources defining
 Resources of the equestrian center:
-- ... 
-- ...
+- Service Request Registratiom System 
+- Horse Keeping Management System
 ### 3.3. Roles defining
 Roles of the equestrian center:
-- ... 
-- ...
+- Manager 
+- Horse owner
+- Customer-workout
+- Stableman
+- Coach
 ### 3.4. Data CRUD Matrix for the equestrian center
 
 ![Image 3.1. CRUD Matrix Data to roles](images/CRUD_Data_to_roles.JPG)
