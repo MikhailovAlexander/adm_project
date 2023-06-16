@@ -30,9 +30,9 @@ The use-case diagram for the equestrian center was developed to identify the mai
 
 In the case at hand, Horse owner and Customer-workout are the clients. The employees of the organization are Manager, Stableman, and Coach. Speaking about the clients of the equestrian center, each of them is related to the process of payment for the services. Manager is also involved in this process.
 
-At the same time, Horse owners are involved in the process of conclusion contracts for horse keeping, and customers-workout in the process of registering clients for horseback riding. Both of these processes also involve Manager.
+At the same time, Horse owners are involved in the process of conclusion contracts for horse keeping, and Customers-workout in the process of registering clients for horseback riding. Both of these processes also involve Manager.
 
-Turning to the processes linking the organization's clients and employees, which reflect the direct provision of services, the following should be noted. Horse owners and Stablemans are actors in the process of the organization of the horse keeping. The actors Customer-workout and Coach are involved in the process of horseback riding. Coaches are also involved in the scheduling process, which is done with the involvement of manager.
+Turning to the processes linking the organization's clients and employees, which reflect the direct provision of services, the following should be noted. Horse owners and Stablemans are actors in the process of the organization of the horse keeping. The actors Customer-workout and Coach are involved in the process of horseback riding. Coaches are also involved in the scheduling process, which is done with the involvement of Manager.
 
 ![Image 1.1. The use-case diagram for the equestrian center](diagrams/use_case_diagram.jpg)
 
