@@ -18,12 +18,15 @@ Members and roles:
 3. Mikhaylov Alexander - Developer/ DevOps engineer ⚙️🛠️
 ## 1. Business modeling
 The equestrian center is ...
+The organization provides services to individuals. Services are provided by specific workers, at specific times, with the right horse, specially prepared for a specific client. Also, horse owners can choose horse keeping services on a contractual basis.
+
+![Image 1.1. Equestrian center](images/Equestrian_center.JPG)
 
 The company has two areas of activity:
 1. Horse keeping service
 2. Horse riding service
 ### 1.1. Use case diagram
-The use-case diagram for the equestrian center was developed to identify the main processes and actors. Diagram was created using the Visual Paradigm modeling tool.
+The use-case diagram for the equestrian center was developed to identify the main processes and actors. Diagram was created using the [Visual Paradigm](https://www.visual-paradigm.com/) modeling tool.
 
 ![Image 1.1. The use-case diagram for the equestrian center](diagrams/use_case_diagram.jpg)
 
@@ -57,7 +60,7 @@ Image 1.6. The activity diagram for the riding
 
 ## 2. Conceptual modeling
 A conceptual data model is a graphical representation of entities and their relationships used to model the organization of data in databases or information systems. 
-This model represents the basic entities for the equestrian center. The model created with VisualParadigm as a data modeling tool.
+This model represents the basic entities for the equestrian center. The model created with [Visual Paradigm](https://www.visual-paradigm.com/) as a data modeling tool.
 
 ![Image 2.1. The conceptual ER-diagram for the equestrian center](diagrams/Concept_diagram.jpg)
 
@@ -101,7 +104,7 @@ The logical ER-diagram is a detailed version of the conceptual ER-diagram. The l
 
 ![Image 4.1. The logical ER-diagram for the horse keeping system](diagrams/Logical_Model_Horse_Keeping.jpg)
 
-Image 2.1. The logical ER-diagram for the horse keeping system
+Image 4.1. The logical ER-diagram for the horse keeping system
 ### 4.2. The logical ER-diagram for the horse riding system
 
 ![Image 4.2. The logical ER-diagram for the horse riding system](diagrams/Logical_Model_Service.jpg)
@@ -132,9 +135,10 @@ Image 5.2. The physical ER-diagram for the horse riding system
 ## 6. Database developing
 ## 7. Database deploying
 ## 8. Master data building
+The Russian software [Loginom](https://loginom.ru/) is used to create the Master data about the clients of the equestrian center. The chosen program allows to configure the connection to the databases and then check the selected tables for duplicates and contradictions. Upon completion of merging and cleaning the input data imported from the two databases, the Master data is automatically exported to the database.
 
 ![Image 8.1. Building the Master data](images/master_data_building.png)
 
 Image 8.1. Building the Master data
 
-## Business intelligence integrating
+## 9. Business intelligence integrating
