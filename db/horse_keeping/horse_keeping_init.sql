@@ -375,4 +375,27 @@ REFERENCES public.invoice_detail (invoice_detail_id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
+-- SCHEMA: golden
+-- DROP SCHEMA IF EXISTS golden ;
 
+CREATE SCHEMA IF NOT EXISTS golden
+    AUTHORIZATION postgres;
+
+-- Table: golden.client
+-- DROP TABLE IF EXISTS golden.client;
+
+CREATE TABLE IF NOT EXISTS golden.client
+(
+    client_id serial NOT NULL,
+    person_name character varying COLLATE pg_catalog."default" NOT NULL,
+    person_birth_date date NOT NULL,
+    sex_name character varying COLLATE pg_catalog."default" NOT NULL,
+    client_phone character varying(11) COLLATE pg_catalog."default" NOT NULL,
+    client_email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT client_pkey PRIMARY KEY (client_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS golden.client
+    OWNER to postgres;

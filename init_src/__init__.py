@@ -38,7 +38,10 @@ KEEPING_PROCEDURES = ['db/horse_keeping/procedures/add_client.sql',
                       'db/horse_keeping/procedures/add_service_to_contract.sql',
                       'db/horse_keeping/procedures/distribute_payment.sql',
                       'db/horse_keeping/procedures/create_invoice.sql']
-KEEPING_VIEWS = ['db/horse_keeping/views/v_client.sql']
+KEEPING_VIEWS = ['db/horse_keeping/views/v_client.sql',
+                 'db/horse_keeping/views/v_employee.sql',
+                 'db/horse_keeping/views/v_invoice.sql',
+                 'db/horse_keeping/views/v_payment.sql']
 INSERT_CONTRACT_QUERY = 'CALL public.add_contract(?, ?, ?, ?, ?, NULL);'
 SELECT_SERVICES_QUERY = 'SELECT service_id FROM public.service'
 INSERT_PRICE_QUERY = 'INSERT INTO public.service_price (service_price, service_price_active_from, service_id) VALUES (?, ?, ?);'
@@ -62,7 +65,10 @@ RIDING_PROCEDURES = ['db/horse_riding/procedures/add_client.sql',
                      'db/horse_riding/procedures/add_horse.sql',
                      'db/horse_riding/procedures/add_schedule_row.sql',
                      'db/horse_riding/procedures/add_client_to_schedule.sql']
-RIDING_VIEWS = ['db/horse_riding/views/v_client.sql']
+RIDING_VIEWS = ['db/horse_riding/views/v_client.sql',
+                'db/horse_riding/views/v_employee.sql',
+                'db/horse_riding/views/v_payment.sql',
+                'db/horse_riding/views/v_employee_workout_rep.sql']
 SELECT_EMPLOYEE_QUERY = 'SELECT employee_id FROM public.get_employees_id_by_profession(?)'
 SELECT_SERVICE_ID_QUERY = 'SELECT service_id FROM public.service WHERE service_name  = ?'
 INSERT_EMPL_SERVICE_LINK_QUERY = 'INSERT INTO public.employee_service_link(employee_service_link_active_from, employee_id, service_id) VALUES(?, ?, ?)'

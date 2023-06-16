@@ -339,6 +339,37 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
+<schema name="golden" layer="0" rect-visible="true" fill-color="#e1e1e1">
+	<role name="postgres"/>
+</schema>
+
+<table name="client" layer="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="golden"/>
+	<role name="postgres"/>
+	<position x="360" y="760"/>
+	<column name="client_id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="person_name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="person_birth_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="sex_name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="client_phone" not-null="true">
+		<type name="varchar" length="11"/>
+	</column>
+	<column name="client_email" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="client_pk" type="pk-constr" table="golden.client">
+		<columns names="client_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
 <constraint name="fk_person_sex" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.sex" table="public.person">
 	<columns names="sex_id" ref-type="src-columns"/>
