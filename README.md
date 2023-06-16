@@ -18,6 +18,7 @@ Members and roles:
 3. Mikhaylov Alexander - Developer/ DevOps engineer ⚙️🛠️
 ## 1. Business modeling
 The equestrian center is ...
+The organization provides services to individuals. Services are provided by specific workers, at specific times, with the right horse, specially trained for a specific client. Also, horse owners can choose maintenance services on a contractual basis.
 
 The company has two areas of activity:
 1. Horse keeping service
