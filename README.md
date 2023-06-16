@@ -174,7 +174,7 @@ Scripts for database initialization were automatically generated based on the de
 
 Image 6.1. Database initial scripts developed using pgModeler
 
-Scripts have been developed to create database objects, such as procedures, functions and views for databases.
+Scripts have been developed to create database objects, such as procedures, functions and views.
 
 ![Image 6.2. Database objects](images/db_objects.png)
 
