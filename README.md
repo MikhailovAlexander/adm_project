@@ -64,6 +64,8 @@ Next, let's look at the process of registering clients for horseback riding serv
 
 Image 1.5. The activity diagram for the client registration
 
+The last activity diagram reflects the process of providing horse riding services itself. This process is started in case the previously described process is completed with the client enrolling for the horseback riding and receiving payment from the him/her. So, the client comes to the horseback riding lesson at the appointed time and Coach checks the client's condition - is it possible to admit the client to the riding lesson or not. If the client came to the lesson in an inappropriate state (alcohol intoxication, etc.), the horseback riding lesson is canceling, which leads to the completion of the process. Another case, if horseback riding is permissible, Coach conducts a safety briefing. The client, in turn, must sign in the technical safety logbooksign that the briefing has been listened to. Next, Coach hands out the necessary equipment to the Customer-workout and they start the horseback riding. At the end of the lesson, the client hands in the company-issued equipment to the Coach.
+
 ![Image 1.6. The activity diagram for the riding](diagrams/Horseback_riding.jpg)
 
 Image 1.6. The activity diagram for the riding
