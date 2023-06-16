@@ -42,6 +42,8 @@ Action diagrams have been developed for the main cases from the use case diagram
 
 ### 1.2. Diagrams for the horse keeping actions:
 
+First, the process of registering clients for horse keeping services was considered. This process involves the Horse Owner and the Manager. The process is started when there is a request from the client. The Manager then checks whether the client from which the request was made is a new client or not. If the client has not contacted the company before, the manager registers a new client. After registration or if the client has previously visited the equestrian center, the manager makes an offer for maintenance services. If the client is satisfied with the offer, the Manager informs about the need to check the veterinary documents. Otherwise, the process ends because the organization is unable to meet the customer's needs. If the veterinary documents are filled out correctly, the Manager concludes an agreement with the client, after which the client pays for the maintenance of the horse. If the veterinary documents are not filled out correctly or are missing, the Horse Owner will prepare the correct documents. Next, the Manager checks the veterinary documents again.
+
 ![Image 1.2. The activity diagram for the for horse keeping contract](diagrams/Contract_for_horse_keeping.jpg)
 
 Image 1.2. The activity diagram for the for horse keeping contract
