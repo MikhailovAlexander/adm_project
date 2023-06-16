@@ -58,6 +58,8 @@ Image 1.4. The activity diagram for the scheduling
 
 ![Image 1.5. The activity diagram for the client registration](diagrams/Client_registration_for_horseback_riding.jpg)
 
+Next, let's look at the process of registering clients for horseback riding services. This process involves Customer-workout and Manager. The process is started when a request from a client arises. Then the Manager checks whether the client from whom the request was made is a new client or not. If the client has not previously referred to the company, the Manager registers a new client. After registration or in case the client has previously visited the equestrian center, the manager proceeds to check the possibility of the service provided. If it is possible to provide the service - Manager enroll the client for the horseback riding and then the client arranges payment. Otherwise, the manager offers the client an alternative variant. If the client agrees with the proposed alternative - Manager signs him/her up for the horseback riding and then the client pays for the selected service. If not, the process is completed without enrolling the client and payment, as the organization does not have the opportunity to meet the client's needs.
+
 Image 1.5. The activity diagram for the client registration
 
 ![Image 1.6. The activity diagram for the riding](diagrams/Horseback_riding.jpg)
