@@ -22,7 +22,7 @@ The organization provides services to individuals. Services are provided by spec
 
 ![Image 1.1. Equestrian center](images/Equestrian_center.JPG)
 
-The company has two areas of activity:
+The company has two activity areas:
 1. Horse keeping service
 2. Horse riding service
 ### 1.1. Use case diagram
