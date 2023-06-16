@@ -76,6 +76,8 @@ Image 2.1. The conceptual ER-diagram for the equestrian center
 
 ## 3. CRUD Matrix designing
 ### 3.1. Processes defining
+Processes were identified based on use case diagrams and activity diagrams.
+
 Processes of the equestrian center:
 - Client registration for horseback-riding 
 - Get payment for the service
@@ -84,16 +86,23 @@ Processes of the equestrian center:
 - Organization of the horse keeping
 - Provision horseback riding 
 ### 3.2. Resources defining
+Resources were determined based on the company's activities.
+
 Resources of the equestrian center:
 - Service Request Registratiom System 
 - Horse Keeping Management System
 ### 3.3. Roles defining
+Based on the description of the business processes and the use case diagram, roles were identified.
+
 Roles of the equestrian center:
 - Manager 
 - Horse owner
 - Customer-workout
 - Stableman
 - Coach
+
+After analyzing all the input data, it was decided to build three CRUD MATRIX (image 3.1, image  3.2, image 3.3 show it). The matrix were built in terms of roles to the rest of the output data.
+
 ### 3.4. Data CRUD Matrix for the equestrian center
 
 ![Image 3.1. CRUD Matrix Data to roles](images/CRUD_Data_to_roles.JPG)
