@@ -151,21 +151,32 @@ Russian developers participate in the development of Postgresql, there is a Russ
 
 ![Image pg_logo](images/pg_logo.png)
 ### 5.2. Physical data modeling
-PgModeler, an open-source, multiplatform database modeler for PostgreSQL, was chosen as the data modeling tool.
+PgModeler, an open-source, multiplatform database modeler for PostgreSQL, was chosen as the data modeling tool. PgModeler is easy to use, allowing the creation and modification of database models with an intuitive interface. 
 
 ![Image pg_logo](images/pgmodeler_logo.png)
 ### The physical ER-diagram for the horse keeping system
 
 ![Image 5.1. The physical ER-diagram for the horse keeping system](diagrams/Phisycal_model_horse_keeping.png)
 
-Image 5.1. The logical ER-diagram for the horse keeping system
+Image 5.1. The physical ER-diagram for the horse keeping system developed using pgModeler
 ### The physical ER-diagram for the riding keeping system
 
 ![Image 5.2. The physical ER-diagram for the horse riding system](diagrams/Phisycal_model_horse_riding.png)
 
-Image 5.2. The physical ER-diagram for the horse riding system
+Image 5.2. The physical ER-diagram for the horse riding system developed using pgModeler
 
 ## 6. Database developing
+Scripts for database initialization were automatically generated based on the developed physical models, using the pgModeler tool:
+- https://github.com/MikhailovAlexander/adm_project/blob/main/db/horse_keeping/horse_keeping_init.sql
+- https://github.com/MikhailovAlexander/adm_project/blob/main/db/horse_riding/horse_riding_init.sql
+
+![Image 6.1. Database initial scripts developed using pgModeler](images/init_db_scripts.png)
+
+Image 6.1. Database initial scripts developed using pgModeler
+
+
+
+
 ## 7. Database deploying
 ## 8. Master data building
 
