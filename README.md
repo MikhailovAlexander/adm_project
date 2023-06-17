@@ -221,14 +221,14 @@ Image 9.3. Schedule Data Mart (Data Base riding)
 Image 9.4. Invoice Data Mart (Data Base keeping)
 
 
-
+The Invoice-Manager View shows the invoiced amounts of each manager in different months. Theressa Hutchinson and Olin Blair show consistently high performance
 
 ![Image 9.5. Invoice-Manager View (Data Base keeping)](images/managers_accruals_by_period.png)
 
 Image 9.5. Invoice-Manager View (Data Base keeping)
 
 
-Invoice-Service View shows
+The Invoice-Service View shows the amount of invoices issued by month for different types of horse keeping services. An upward trend is observed
 
 ![Image 9.6. Invoice-Service View (Data Base keeping)](images/accruals_in_the_context_of_services_by_period.png)
 
