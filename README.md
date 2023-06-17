@@ -209,7 +209,7 @@ _Image 8.1. Building the Master data_
 
 ![Loginom_Logo](images/Loginom_Logo.png)
 
-The [Loginom](https://loginom.ru/) software can also used to create the Business intelligence integrating. As this program allows to set up a connection to databases, it is possible to use this program's tools to create Data Marts and Views.
+The [Loginom](https://loginom.ru/) software is also used to create the Business intelligence integrating. As this program allows to set up a connection to databases, it is possible to use this program's tools to create Data Marts and Views.
 
 ![Image 9.1. Data Marts](images/data_marts.png)
 
