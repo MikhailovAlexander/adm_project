@@ -188,6 +188,14 @@ A small Python application has been developed to automatically initialize and fi
 
 Image 6.3. Python scripts
 
+![Image mimesis logo](images/mimesis.png)
+
+The Python Mimesis library was used to generate personal data of employees, customers and horses. The created data was automatically inserted into the databases.
+
+![Image 6.4. Generate data scripts](images/gen_scripts.png)
+
+Image 6.4. Generate data scripts
+
 ## 7. Database deploying
 ## 8. Master data building
 
