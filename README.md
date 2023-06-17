@@ -203,7 +203,7 @@ The Russian software [Loginom](https://loginom.ru/) is used to create the Master
 
 ![Image 8.1. Building the Master data](images/master_data_building.png)
 
-_Image 8.1. Building the Master data_
+_Image 8.1. Building the Master data in Loginom_
 
 ## 9. Business intelligence integrating
 
@@ -213,7 +213,7 @@ The [Loginom](https://loginom.ru/) software is also used to create the Business 
 
 ![Image 9.1. Data Marts](images/data_marts.png)
 
-_Image 9.1. Data Marts_
+_Image 9.1. Data Marts and Views in Loginom_
 
 Client's Master Data Mart illustrates the distribution of clients based on demographic characteristics. Thus, the graph illustrates the number of customers according to gender and age.
 
