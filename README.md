@@ -214,28 +214,28 @@ Image 9.4. Invoice Data Mart (Data Base keeping)
 Image 9.5. Invoice-Manager View (Data Base keeping)
 
 
-
+Invoice-Service View shows
 
 ![Image 9.6. Invoice-Service View (Data Base keeping)](images/accruals_in_the_context_of_services_by_period.png)
 
 Image 9.6. Invoice-Service View (Data Base keeping)
 
 
-
+The Payment-Service View presents the amounts of payments grouped by type of horse keeping service in different months. Especially popular in all months are massage, horse workout, hoof cleaning, video surveillance, workout with a set of obstacles.
 
 ![Image 9.7. Payment-Service View (Data Base keeping)](images/revenue_in_the_context_of_services_by_month.png)
 
 Image 9.7. Payment-Service View (Data Base keeping)
 
 
-
+On the Service View, it can be seen that for the entire period under review, approximately the same number of different types of riding services were provided. Hippotherapy and pony riding have a leading position.
 
 ![Image 9.8. Service View (Data Base riding)](images/total_riding_services_count.png)
 
 Image 9.8. Service View (Data Base riding)
 
 
-
+The last view displays the amounts of payments for services in different areas of activity by months from January to June. It can be seen that for the direction of the horse keeping the amounts of payments increased in June.
 
 ![Image 9.9. Payment-Activity areas View (Data Base keeping & Data Base riding)](images/revenue_in_the_context_of_activity_by_month.png)
 
