@@ -196,6 +196,7 @@ _Image 6.4. Generate data scripts_
 
 ## 7. Database deploying
 ![Image docker compose logo](images/docker_compose_logo.png)
+
 The solution was deployed using docker-compose with three containers:
 - a container with a Postgresql DBMS,
 - a container with a python script filling the database,
