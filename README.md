@@ -209,17 +209,25 @@ _Image 8.1. Building the Master data_
 
 ![Loginom_Logo](images/Loginom_Logo.png)
 
+The [Loginom](https://loginom.ru/) software can also used to create the Business intelligence integrating. As this program allows to set up a connection to databases, it is possible to use this program's tools to create Data Marts and Views.
+
 ![Image 9.1. Data Marts](images/data_marts.png)
 
 _Image 9.1. Data Marts_
+
+Client's Master Data Mart illustrates the distribution of clients based on demographic characteristics. Thus, the graph illustrates the number of customers according to gender and age.
 
 ![Image 9.2. Client's Master Data Mart](images/age_sex_all_clients.png)
 
 _Image 9.2. Client's Master Data Mart_
 
+Schedule Data Mart is based on data from "riding" data base. This cube, which is shown below, illustrates the number of horseback riding sessions with a particular Coach in the context of services by month.
+
 ![Image 9.3. Schedule Data Mart (Data Base riding)](images/the_number_of_classes_of_each_coach_in_the_context_of_services_by_month.png)
 
 _Image 9.3. Schedule Data Mart (Data Base riding)_
+
+Invoice Data Mart is based on data from "keeping" data base. The following cube presents the number of horses of the clients (Horse owners) that received a particular service within the keeping period, by months.
 
 ![Image 9.4. Invoice Data Mart_db_keeping (Data Base keeping)](images/number_of_horses_of_the_clients_who_received_the_service_by_months.png)
 
