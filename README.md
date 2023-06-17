@@ -212,9 +212,9 @@ Access to pgAdmin was configured using Nginx Proxy Manager.
 
 ![Image 7.2. Proxy settings](images/proxy.png)
 
-![Image pg admin logo](images/pg_admin_logo.png)
-
 _Image 7.2. Proxy settings_
+
+![Image pg admin logo](images/pg_admin_logo.png)
 
 Using pgAdmin, access to the databases deployed on the server was configured. All team members could work with databases using a browser, there was no need to install any tools for working with databases.
 
