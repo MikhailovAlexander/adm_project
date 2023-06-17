@@ -174,11 +174,19 @@ Scripts for database initialization were automatically generated based on the de
 
 Image 6.1. Database initial scripts developed using pgModeler
 
-Scripts have been developed to create database objects, such as procedures, functions and views.
+SQL-scripts have been developed to create database objects, such as procedures, functions and views.
 
 ![Image 6.2. Database objects](images/db_objects.png)
 
 Image 6.2. Database objects
+
+![Image python logo](images/python_logo.png)
+
+A small Python application has been developed to automatically initialize and fill databases for the equestrian center. Database objects were created for each database - tables, relationships, functions, procedures, and views. After that, data was generated to fill the database, including contracts, invoices and payments for the horse keeping center and workout schedule for the horse riding center.
+
+![Image 6.3. Python scripts](images/init_python_scripts.png)
+
+Image 6.3. Python scripts
 
 ## 7. Database deploying
 ## 8. Master data building
