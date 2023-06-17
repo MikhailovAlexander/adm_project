@@ -289,3 +289,7 @@ The last view displays the amounts of payments for services in different areas o
 ![Image 9.9. Payment-Activity areas View (Data Base keeping & Data Base riding)](images/revenue_in_the_context_of_activity_by_month.png)
 
 _Image 9.9. Payment-Activity areas View (Data Base keeping & Data Base riding)_
+
+## Each team member's contribution to the project
+
+![Image 10.1. Contributors](images/github_stat.jpg)
