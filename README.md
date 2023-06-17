@@ -208,6 +208,19 @@ The solution was deployed on a virtual machine rented from a cloud provider, the
 
 _Image 7.1. ArchiMate diagram_
 
+Access to pgAdmin was configured using Nginx Proxy Manager.
+
+![Image 7.2. Proxy settings](images/proxy.png)
+
+![Image pg admin logo](images/pg_admin_logo.png)
+
+_Image 7.2. Proxy settings_
+
+Using pgAdmin, access to the databases deployed on the server was configured. All team members could work with databases using a browser, there was no need to install any tools for working with databases.
+
+![Image 7.2. Proxy settings](images/pg_admin.png)
+
+_Image 7.3. PgAdmin Tool_
 
 ## 8. Master data building
 
